@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سنتر أبل | Center Apple</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            text-align: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+        }
+
+        /* تنسيق الترويسة */
+        header {
+            padding: 40px 20px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 16px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* شبكة الأزرار */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 0 20px;
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+        }
+
+        /* الكروت */
+        .card {
+            background-color: var(--card-bg);
+            text-decoration: none;
+            color: var(--text-main);
+            width: 260px;
+            padding: 40px 20px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            font-size: 22px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* خط الإضاءة العلوي في الكرت */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* تأثير تمرير الماوس */
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        /* الأيقونات */
+        .icon {
+            font-size: 55px;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .icon {
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🍎 سنتر أبل</h1>
+        <p>CENTER APPLE</p>
+    </header>
+
+    <div class="container">
+        <a href="#" class="card">
+            <span class="icon">🎧</span>
+            إكسسوارات
+        </a>
+        <a href="#" class="card">
+            <span class="icon">📱</span>
+            موبايلات جديدة
+        </a>
+        <a href="#" class="card">
+            <span class="icon">📲</span>
+            موبايلات مستخدمة
+        </a>
+        <a href="#" class="card">
+            <span class="icon">🛠️</span>
+            صيانة تلفونات
+        </a>
+        <a href="#" class="card">
+            <span class="icon">🔥</span>
+            عروض خاصة
+        </a>
+    </div>
+
+</body>
+</html>
